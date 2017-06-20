@@ -1,0 +1,85 @@
+﻿.navbar {
+  margin-bottom: 0;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
+#leftNavContainer{
+  padding-left: 0;
+  padding-right: 0;
+  background-color: antiquewhite;
+  border: 1px solid #333;
+}
+
+
+#leftNavContainer ul {
+  display: block;
+  list-style-type: none;
+  -webkit-margin-before: 1em;
+  -webkit-margin-after: 1em;
+  -webkit-margin-start: 0px;
+  -webkit-margin-end: 0px;
+  -webkit-padding-start: 20px;
+}
+
+.leftNavSectionTitle {
+  color: white;
+  background-color: black;
+  width: 100%;
+  padding: 2px;
+  padding-top: 4px;
+}
+
+
+#reportContainer{
+  height: 600px;
+  width: 100%;
+  max-width: 1000px;
+}
+
+
+#dashboardContainer {
+  height: 920px;
+  width: 100%;
+  max-width: 1320px;
+}
+
+  #dashboardContainer iframe {
+    border: none;
+  }
+
+#buttonsWrapper {
+  width: 100%;
+  text-align: center;
+  padding-top: 50px;
+}
+
+a:hover, a:visited, a:link, a:active {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#buttonsWrapper a {
+  background-color: rgb(36, 169, 225);
+  border: none;
+  color: white;
+  padding: 5px 30px;
+  margin: 5px;
+  width: 200px;
+  height: 30px;
+  display: inline-block;
+  text-align: center;
+}
+
+  #buttonsWrapper a:hover {
+    font-size: 120%;
+  }
+
+#tileContainer {
+  width: 400px;
+  height: 350px;
+}
+
+.infoBox {
+  margin-top: 30px;
+}

@@ -1,0 +1,45 @@
+﻿@model HelloPbiEmbedded_3rdParty.Models.ReportsViewModel
+
+<script src="~/scripts/powerbi.js"></script>
+
+<!-- left mav menu -->
+<div id="leftNavContainer" class="col-md-2">
+  <div class="leftNavSectionTitle">Reports</div>
+  <ul>
+    @foreach (var report in Model.Reports) {
+      <li><a href="/Reports/?ReportId=@report.Id">@report.Name</a></li>
+    }
+  </ul>
+</div>
+
+
+<div class="col-md-10" style="border: solid 1px #eee">
+
+  <div id="reportContainer"></div>
+
+  @if (Model.CurrentReport != null) {
+    <script>
+      var accessToken = "@Model.CurrentReport.EmbedConfig.EmbedToken.Token";
+      var embedUrl = "@Html.Raw(Model.CurrentReport.EmbedConfig.EmbedUrl)";
+      var embedReportId = "@Model.CurrentReport.EmbedConfig.Id";
+      var models = window['powerbi-client'].models;
+
+      var config = {
+          type: 'report',
+          tokenType: models.TokenType.Embed,
+          accessToken: accessToken,
+          embedUrl: embedUrl,
+          id: embedReportId,
+          permissions: models.Permissions.All,
+          viewMode: models.ViewMode.Edit,
+          settings: {
+              filterPaneEnabled: false,
+              navContentPaneEnabled: true
+          }
+      };
+
+      var reportContainer = document.getElementById('reportContainer');
+      var report = powerbi.embed(reportContainer, config);
+    </script>
+  }
+</div>
